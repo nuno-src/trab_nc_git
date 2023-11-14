@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
+    <!--<script src="/socket.io/socket.io.js"></script>-->
+    <script src="./check.js"></script>
+    <script>
+      /*
+      //var st;
+      //st = ajax();
+      //console.log(st);
+      //console.log('ok');
+
+      if (st == "logged"){
+        //nothing
+
+      } 
+      else {
+        //<meta http-equiv="refresh" content="1, url=http://localhost:5000"/>
+
+      }
+        */
+
+    </script>
+
+
+
+
+    <script src="./app.js" defer></script>
+  </head>
+
+  <body>
+
+    <script>
+      /*
+      function ajax(){
+
+        var aj;
+        var xmlHttp;
+        if(window.XMLHttpRequest){
+            xmlHttp = new XMLHttpRequest;
+
+        }else{
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+
+
+
+        xmlHttp.onreadystatechange = function(){
+          if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+            //console.log(xmlHttp.responseText);
+
+            aj = xmlHttp.responseText;
+            //console.log(aj)
+            //return aj;
+          }
+
+
+
+
+
+          
+
+
+
+
+        }
+
+        xmlHttp.open('GET', 'sessions.txt', true);
+        xmlHttp.send();
+        /*
+
+        console.log(aj)
+        if (aj == null) {
+            //nothing
+          console.log('if')
+          break;
+        } 
+        if (aj != null) {
+            //<meta http-equiv="refresh" content="1, url=http://localhost:5000"/>
+          console.log('else')
+            //window.location.replace('http://localhost:5000/login')
+          break;
+        }
+        
+
+      }
+
+      */
+     
+      // let x = ajax();
+
+      //console.log('asd' + x)
+      /*
+      
+      if (x == true) {
+            //nothing
+        console.log('if')
+        
+      } 
+      else {
+            //<meta http-equiv="refresh" content="1, url=http://localhost:5000"/>
+        console.log('else')
+            //window.location.replace('http://localhost:5000/login')
+        
+      }
+      
+      */
+
+      fetch('http://localhost:5000/check')
+        .then(res => {
+          //.then(res => res.json())
+          //.then(data => console.log(data))
+          if(res.ok){
+            // nothing
+            //console.log('if')
+          } else {
+            window.location.replace('http://localhost:5000/login')
+            //console.log('else')
+          }
+        })
+
+    </script>
+   
+
+    <h1 class="neon">Tic-Tac-Toe</h1>
+    
+
+    <div class="game-container">
+      <div class="game-square" id="1"></div>
+      <div class="game-square" id="2"></div>
+      <div class="game-square" id="3"></div>
+      <div class="game-square" id="4"></div>
+      <div class="game-square" id="5"></div>
+      <div class="game-square" id="6"></div>
+      <div class="game-square" id="7"></div>
+      <div class="game-square" id="8"></div>
+      <div class="game-square" id="9"></div>
+    </div>
+
+    <h1 class="game-info"></h1>
+
+    <input
+      type="text"
+      id="RoomID"
+      onkeypress="return /[a-z]/i.test(event.key)"
+    />
+    <button id="multiplayerButton">MultiPlayer</button>
+
+    <div class="multiplayer-selected">
+      <h2 class="enemyConnected">Waiting for other player to connect</h2>
+
+      <button id="startGame" class="neon">Ready to go</button>
+    </div>
+
+
+  </body>
+
+</html>
