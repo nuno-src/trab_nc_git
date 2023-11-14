@@ -1,4 +1,4 @@
-# trab_nc_git
+# trab_nc_tic-tac-toe
  Trabalho computação na nuvem  tic tac toe with node and python
 
 ## Setup & Installation
