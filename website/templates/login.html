@@ -23,9 +23,11 @@
     />
   </div>
   <br />
-  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="submit" onclick="wr_lst()" class="btn btn-primary">Login</button>
   <script> 
-	localStorage.setItem('templog', 'yes') 
+	function wr_lst() {
+        localStorage.setItem('templog', 'yes');
+       }
   </script>
 </form>
 {% endblock %}

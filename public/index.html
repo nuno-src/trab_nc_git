@@ -46,10 +46,16 @@
   </head>
 
   <body>
+		<script>         
+                
+         function clear_lst() {                                   
+             localStorage.clear();                                     
+         }                                                     
+		</script>              
     <header>
     <nav> 
         <ul>
-            <a href="http://127.0.0.1:5000/logout"> Logout </a>   
+            <a onclick="clear_lst()" href="http://127.0.0.1:5000/logout"> Logout </a>   
         </ul>
     </nav>
   </header>
