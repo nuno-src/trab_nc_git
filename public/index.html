@@ -12,16 +12,16 @@
     <script>
      
 
-	var stl = localStorage.getItem('templog')
-	console.log(stl)
-	if(stl == 'yes') {
-	// nada
-	//console.log("nada")
-	}
-	else {
-		console.log("else") 
-		window.location.replace('http://localhost:5000/login')
-		}    
+		var stl = localStorage.getItem('templog')
+		console.log(stl)
+		if(stl == 'yes') {
+		// nada
+		//console.log("nada")
+		}
+		else {
+			console.log("else") 
+			window.location.replace('http://localhost:5000/login')
+			}    
 			
     </script>
 
@@ -29,14 +29,16 @@
 
 
     <script src="./app.js" defer></script>
+	
+
   </head>
 
   <body>
 	<script>         
                 
-	         function clear_lst() {                                   
-	             localStorage.clear();                                     
-	         }                                                     
+		 function clear_lst() {                                   
+			 localStorage.clear();                                     
+		 }                                                     
 	</script>              
     <header>
     <nav> 
@@ -45,12 +47,14 @@
         </ul>
     </nav>
   </header>
-
-    
+  
+   
    
 
     <h1 class="neon">Tic-Tac-Toe</h1>
     
+	
+	<input type="file" id="imgInput" accept="image/*">
 
     <div class="game-container">
       <div class="game-square" id="1"></div>
@@ -80,6 +84,21 @@
     </div>
 
 
+
+	<script>
+		const fileInput = document.getElementById('imgInput');
+
+		fileInput.addEventListener('change', function() {
+		  const file = fileInput.files[0];
+		  const reader = new FileReader();
+
+		  reader.onload = function(e) {
+			document.body.style.backgroundImage = `url('${e.target.result}')`;
+		  }
+
+		  reader.readAsDataURL(file);
+		});
+  </script>
   </body>
 
 </html>
