@@ -8,29 +8,9 @@ import os
 auth = Blueprint('auth', __name__)
 
 
-def write_session():
-    with open('./public/sessions.txt', 'w') as f:
-        f.write("logged")
-#     ficheiro = "./sessions.txt"
-#
-#     if os.path.isfile(ficheiro):
-#
-#         f = open(ficheiro, "w")
-#         f.write("logged")
-#         f.close()
-#
 
 
-def clear_session():
 
-    with open('./public/sessions.txt', 'w') as f:
-        f.write("")
-#     ficheiro = "./sessions.txt"
-#
-#     if os.path.isfile(ficheiro):
-#
-#         f = open(ficheiro, "w")
-#         f.close()
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -43,7 +23,6 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
-                write_session()
                 return redirect(url_for('views.home'))
             else:
                 flash('Incorrect password, try again.', category='error')
@@ -57,7 +36,6 @@ def login():
 @login_required
 def logout():
     logout_user()
-    clear_session()
     return redirect(url_for('auth.login'))
 
 
